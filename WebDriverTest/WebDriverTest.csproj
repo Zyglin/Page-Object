@@ -62,8 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MoreLinq\MoreEnumerable.TakeUntil.cs" />
+    <Compile Include="PageHome.cs" />
     <Compile Include="PageObject.cs" />
-    <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
