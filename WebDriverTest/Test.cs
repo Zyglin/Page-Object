@@ -1,19 +1,27 @@
 using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace WebDriverTest
 {
     [TestFixture]
-    public class PageObjectPattern
+    public class TestClass
     {
-     
-       
+
+        private IWebDriver driver;
+        const string url = "https://www.turkishairlines.com/";
+
         [Test]
         public void Test_spechialoffer()
         {
-          using (var page = new Main())
-            {
-                Assert.AreEqual(true,page.Search());
-            }
+            driver.Navigate().GoToUrl(url);
+            PageHome pageHome = new FindElements();
+            PageFactory.InitElements(driver, pageHome);
+            pageHome.ExpLink.Click();
+            pageHome.FirstCity.Click();           
+                Assert.IsNotNull(pageHome.ButtonResult, "Here is no any data about flight");
+                Assert.AreEqual("Забронировать перелёт", pageHome.ButtonResult.Text, "flight status is incorrect")
+          
         }
     }
 }
