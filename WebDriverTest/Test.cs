@@ -19,8 +19,8 @@ namespace WebDriverTest
             PageFactory.InitElements(driver, pageHome);
             pageHome.ExpLink.Click();
             pageHome.FirstCity.Click();           
-                Assert.IsNotNull(pageHome.ButtonResult, "Here is no any data about flight");
-                Assert.AreEqual("Забронировать перелёт", pageHome.ButtonResult.Text, "flight status is incorrect")
+            Assert.IsNotNull(pageHome.ButtonResult, "Here is no any data about flight");
+            Assert.AreEqual("Забронировать перелёт", pageHome.ButtonResult.Text, "flight status is incorrect");
           
         }
     }
